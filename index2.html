@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kingdom of Dee & Okyere</title>
+
+<style>
+body {
+  margin:0;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: #f5f5f5;
+  overflow-x:hidden;
+}
+
+/* gold glow particles */
+.particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: gold;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+
+header {
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: gold;
+  letter-spacing:2px;
+}
+
+button {
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:gold;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.section {
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,215,0,0.3);
+  padding:20px;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+.hidden {
+  display:none;
+}
+
+.progress {
+  background:#333;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bar {
+  height:15px;
+  background:gold;
+  width:0%;
+  transition:2s;
+}
+
+footer {
+  text-align:center;
+  padding:40px;
+  color:gray;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>👑 THE KINGDOM OF DEE & OKYERE 👑</h1>
+<p>Access granted to one man only</p>
+<button onclick="enter()">Enter Kingdom</button>
+</header>
+
+<div id="content" class="hidden">
+
+<div class="section">
+<h2 style="color:gold;">Royal System Status</h2>
+
+<div class="card">
+<p>Trust Level</p>
+<div class="progress"><div class="bar" id="b1"></div></div>
+
+<p>Respect Level</p>
+<div class="progress"><div class="bar" id="b2"></div></div>
+
+<p>Missing You Level</p>
+<div class="progress"><div class="bar" id="b3"></div></div>
+</div>
+</div>
+
+<div class="section">
+<h2 style="color:gold;">💌 Message From Dee</h2>
+
+<div class="card">
+<p>
+Mr Okyere,<br><br>
+
+This is not a perfect world, but somehow you make it feel lighter.<br><br>
+
+You don’t need loud words to matter — your presence already speaks.<br><br>
+
+Just a reminder: you are appreciated more than you think.
+<br><br>
+— Dee ❤️
+</p>
+</div>
+</div>
+
+<div class="section">
+<h2 style="color:gold;">🏆 Royal Awards</h2>
+
+<div class="card">Best Smile of the Kingdom</div>
+<div class="card">Chief Protector of Dee’s Peace</div>
+<div class="card">Most Reliable Human</div>
+<div class="card">Lifetime Role: "The One"</div>
+
+</div>
+
+<div class="section">
+<h2 style="color:gold;">⭐ Royal Reviews</h2>
+
+<div class="card">⭐⭐⭐⭐⭐ "No complaints. 10/10 human." — Dee</div>
+<div class="card">⭐⭐⭐⭐⭐ "Makes life softer." — Heart Department</div>
+<div class="card">⭐⭐⭐⭐⭐ "Would recommend again." — Universe</div>
+
+</div>
+
+<div class="section">
+<h2 style="color:gold;">📜 Final Decree</h2>
+
+<div class="card">
+By order of Dee,<br><br>
+
+Mr Okyere is hereby granted:<br><br>
+
+✔ Respect<br>
+✔ Loyalty<br>
+✔ Soft place in this heart<br>
+✔ Unlimited access to her peace<br><br>
+
+Forever registered.
+</div>
+
+</div>
+
+<footer>
+Made with quiet love ❤️
+</footer>
+
+</div>
+
+<script>
+function enter(){
+  document.querySelector("header").style.display="none";
+  document.getElementById("content").classList.remove("hidden");
+
+  // animate bars
+  setTimeout(()=> {
+    document.getElementById("b1").style.width="100%";
+    document.getElementById("b2").style.width="100%";
+    document.getElementById("b3").style.width="90%";
+  },500);
+}
+
+// floating particles
+for(let i=0;i<40;i++){
+  let p = document.createElement("div");
+  p.className="particle";
+  p.style.left = Math.random()*100 + "vw";
+  p.style.animationDuration = (5+Math.random()*10)+"s";
+  document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
